@@ -1,11 +1,13 @@
 package week11.shapes3d;
 
+import week11.shapes2d.Circle;
+
 public class Cylinder extends Circle {
 
     private double height;
 
-    public Cylinder(double radius, Point point, double height, String color){
-        super(radius, point, color);
+    public Cylinder(double radius, double height, String color){
+        super(radius, color);
         this.height=height;
     }
 
@@ -18,15 +20,14 @@ public class Cylinder extends Circle {
     }
 
     public double getVolume(){
-        return super.getArea()*height;
+        return getArea()*height;
     }
 
-    @Override
-    public double getArea() {
-        return super.getArea()+(super.getCircumference()*height);
+    public double getBaseArea(){
+        return getArea();
     }
 
     public String toString(){
-        return "{ Height: "+height+"; "+super.toString()+"}";
+        return "Cylinder["+super.toString()+"Height: "+height+"]";
     }
 }

@@ -3,7 +3,7 @@
  *  Do not use without permission
  */
 
-package week11.shapes3d;
+package week11.shapes2d;
 
 /**
  *
@@ -13,16 +13,10 @@ package week11.shapes3d;
  */
 public class Circle {
     private double radius;
-    private Point center;
     private String color;
     
-    public Circle() {
-        this(20, new Point(), "black");
-    }
-    
-    public Circle(double radius, Point center, String color){
+    public Circle(double radius, String color){
         this.radius=radius;
-        this.center=center;
         this.color=color;
     }   
     
@@ -34,14 +28,6 @@ public class Circle {
     
     public double getRadius(){
         return radius;
-    }
-
-    public Point getCenter() {
-        return center;
-    }
-
-    public void setCenter(Point center) {
-        this.center = center;
     }
     
     public void setColor(String color){
@@ -59,19 +45,10 @@ public class Circle {
     public double getArea(){
         return Math.PI*radius*radius;
     } 
-    
-    public void moveHorizontal(int distance){
-        center.setX(center.getX()+distance);
-    }
-    
-    public void moveVertical(int distance){
-        center.setY(center.getY()+distance);
-    }    
-    
+
     @Override
     public String toString(){
-        return "{Radius: "+radius
-                +"; Color: "+color
-                +"; Center: "+center;
+        return "Circle[Radius: "+radius
+                +"; Color: "+color+"]";
     }
 }
